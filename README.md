@@ -105,10 +105,10 @@ hft_fpga_system/
 
 ## Future Improvements
 
-- **📦 AXI4-Stream Integration**  
+- AXI4-Stream Integration 
   Move to AXI4-Stream interfaces for better compatibility with DMA engines and high-speed IP cores, enhancing throughput and modularity.
 
-- **📈 Dynamic Risk Configuration**  
+- Dynamic Risk Configuration  
   Allow runtime adjustment of risk parameters (e.g., max position/exposure limits) via UART or control register interface for more flexible testing and prototyping.
 
 - **🧠 Smarter Order Matching Algorithms**  
