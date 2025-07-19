@@ -129,5 +129,8 @@ hft_fpga_system/
 - Full TCP/IP Stack over Ethernet  
   Replace UART simulation with actual Ethernet MAC + PHY IP to support real network interfaces, enabling compatibility with financial data feeds and exchange simulators. This would however require me to get a new FPGA and the reason for this not being done in the first place was that the Basys 3 board does not have an ethernet port.
 
+## Contributing
+
+Contributions to this FPGA Trading System are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request. 
 
 
