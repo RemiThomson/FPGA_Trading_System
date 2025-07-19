@@ -11,6 +11,10 @@ A high-frequency trading (HFT) system implemented on an FPGA (Basys 3), designed
 - UART I/O for Trade Transmission
 - Modular & Testable Verilog Architecture
 
+## System Architecture
+
+## Project Overview
+
 ## Project Structure
 
 ```text
@@ -39,8 +43,6 @@ hft_fpga_system/
 │           └── tb_top_level.v
 ├── hft_fpga_system.xpr
 ```
-## System Architecture
-
 ## Technologies
 
 - Verilog HDL
