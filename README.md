@@ -17,6 +17,7 @@ A high-frequency trading (HFT) system implemented on an FPGA (Basys 3), designed
 
 ## Project Structure
 
+pre '''
 hft_fpga_system/
 ├── hft_fpga_system.srcs/
 │ ├── sources_1/
@@ -41,5 +42,6 @@ hft_fpga_system/
 │ ├── tb_risk_management.v
 │ └── tb_top_level.v
 ├── hft_fpga_system.xpr
+'''pre
 
 
