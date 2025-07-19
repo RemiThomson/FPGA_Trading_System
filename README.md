@@ -105,5 +105,32 @@ hft_fpga_system/
 
 ## Future Improvements
 
+- **📦 AXI4-Stream Integration**  
+  Move to AXI4-Stream interfaces for better compatibility with DMA engines and high-speed IP cores, enhancing throughput and modularity.
+
+- **📈 Dynamic Risk Configuration**  
+  Allow runtime adjustment of risk parameters (e.g., max position/exposure limits) via UART or control register interface for more flexible testing and prototyping.
+
+- **🧠 Smarter Order Matching Algorithms**  
+  Introduce advanced features like iceberg orders, pegged orders, or multiple order types (limit/market) for more realistic exchange behavior.
+
+- **📊 Real-Time Monitoring Interface**  
+  Add a UART or VGA dashboard module to view internal book state, trades executed, or performance metrics in real time.
+
+- **🧪 Formal Verification & Assertions**  
+  Integrate SystemVerilog assertions and formal tools to ensure protocol correctness, deadlock-freedom, and compliance with trading logic invariants.
+
+- **🕒 Sub-Nanosecond Latency Profiling**  
+  Use on-chip timers to measure exact cycle latencies through each module and identify performance bottlenecks.
+
+- **🧰 Configurable FIFO Depths**  
+  Parameterize all FIFO buffers to allow tuning for throughput vs. resource trade-offs based on target FPGA.
+
+- **🧬 Add Replay or Logging Capability**  
+  Store incoming/outgoing packets in BRAM for replay or post-analysis, useful for debugging and stress testing.
+
+- **🌐 Integration with Software Back-Ends**  
+  Connect the FPGA output to a software trading simulator or order book visualizer via serial/USB to bridge hardware and higher-level analytics.
+
 
 
