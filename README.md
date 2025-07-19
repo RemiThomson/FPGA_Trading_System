@@ -15,7 +15,34 @@ A high-frequency trading (HFT) system implemented on an FPGA (Basys 3), designed
 
 <img src="./System_Architecture.png" alt="System Architecture" width="800"/>
 
-## Project Overview
+## Project Structure
+
+```text
+hft_fpga_system/
+├── hft_fpga_system.srcs/
+│   ├── sources_1/
+│   │   └── new/
+│   │       ├── order_matching_engine.v
+│   │       ├── tcp_ip_stack.v
+│   │       ├── ethernet_layer.v
+│   │       ├── ip_layer.v
+│   │       ├── tcp_layer.v
+│   │       ├── custom_ip_core.v
+│   │       ├── axi_stream_if.v
+│   │       ├── risk_management.v
+│   │       └── top_level.v
+│   ├── constrs_1/
+│   │   └── new/
+│   │       └── Constraints.xdc
+│   └── sim_1/
+│       └── new/
+│           ├── tb_order_matching_engine.v
+│           ├── tb_tcp_ip_stack.v
+│           ├── tb_custom_ip_core.v
+│           ├── tb_risk_management.v
+│           └── tb_top_level.v
+├── hft_fpga_system.xpr
+```
 
 ## Project Overview
 
@@ -67,34 +94,6 @@ Stabilizes button inputs (like BTNR) used to manually trigger trade transmission
 ### `temp.v`
 A lightweight monitor that lights up status LEDs when packets are received and parsed correctly. Useful for debugging and visual confirmation that packets are being received.
 
-## Project Structure
-
-```text
-hft_fpga_system/
-├── hft_fpga_system.srcs/
-│   ├── sources_1/
-│   │   └── new/
-│   │       ├── order_matching_engine.v
-│   │       ├── tcp_ip_stack.v
-│   │       ├── ethernet_layer.v
-│   │       ├── ip_layer.v
-│   │       ├── tcp_layer.v
-│   │       ├── custom_ip_core.v
-│   │       ├── axi_stream_if.v
-│   │       ├── risk_management.v
-│   │       └── top_level.v
-│   ├── constrs_1/
-│   │   └── new/
-│   │       └── Constraints.xdc
-│   └── sim_1/
-│       └── new/
-│           ├── tb_order_matching_engine.v
-│           ├── tb_tcp_ip_stack.v
-│           ├── tb_custom_ip_core.v
-│           ├── tb_risk_management.v
-│           └── tb_top_level.v
-├── hft_fpga_system.xpr
-```
 ## Technologies
 
 - Verilog HDL
