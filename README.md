@@ -45,5 +45,13 @@ hft_fpga_system/
 ```
 ## System Architecture
 
+## Technologies
+
+- Verilog HDL
+- Xilinx Vivado
+- Basys 3 FPGA (Artix-7)
+- UART Protocol
+- RTL Design
+
 
 
