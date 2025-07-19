@@ -49,5 +49,7 @@ hft_fpga_system/
 - UART Protocol
 - RTL Design
 
+## Future Improvements
+
 
 
