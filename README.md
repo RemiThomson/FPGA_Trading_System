@@ -43,6 +43,7 @@ hft_fpga_system/
 │           └── tb_top_level.v
 ├── hft_fpga_system.xpr
 ```
+## System Architecture
 
 
 
