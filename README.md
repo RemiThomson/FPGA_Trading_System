@@ -17,7 +17,7 @@ A high-frequency trading (HFT) system implemented on an FPGA (Basys 3), designed
 
 ## Project Overview
 
-## 🔧 Project Overview
+## Project Overview
 
 ### `Wrapper.v`
 This is the top-level module. It connects all the other submodules and wires them to the FPGA I/O. It Provides system-wide control signals (e.g., `RESET`, `CLK`) and binds UART lines, debug LEDs, and flow control between logic blocks.
@@ -35,7 +35,7 @@ Implements a basic TCP handshake/connection tracker. It monitors sequence/acknow
 ---
 
 ### `packet_fifo.v`
-A buffer module that queues incoming payloads parsed by the TCP state machine. Decouples the receiver from the core trading logic to ensure flow control and prevent data loss under high load.
+A buffer module that queues incoming payloads parsed by the TCP state machine. Decouples the receiver from the core trading logic to ensure flow control and prevent data loss under high loads.
 
 ---
 
@@ -45,17 +45,17 @@ The heart of the system. Maintains a price-time priority order book using parall
 - Scans for a matching order to trade against
 - Inserts a new order into the book
 
-Generates a `trade_valid` pulse with order details upon a successful match.
+It then generates a `trade_valid` pulse with order details upon a successful match.
 
 ---
 
 ### `risk_management.v`
-Intercepts trades from the matching engine. Ensures no trade violates position or exposure limits using parameterized thresholds. Trades that pass are approved and passed forward for transmission.
+Intercepts trades from the matching engine. Ensures no trade violates position or exposure limits using parameterised thresholds. Trades that pass are approved and passed forward for transmission.
 
 ---
 
 ### `uart_transmitter.v`
-Serializes and sends approved trades over UART. Sends back trade details like price, quantity, and participant IDs to an external system (e.g., computer or logger).
+Serialises and sends approved trades over UART. Sends back trade details like price, quantity, and participant IDs to an external system (e.g., computer or logger).
 
 ---
 
@@ -65,7 +65,7 @@ Stabilizes button inputs (like BTNR) used to manually trigger trade transmission
 ---
 
 ### `temp.v`
-A lightweight monitor that lights up status LEDs when packets are received and parsed correctly. Useful for debugging and visual confirmation of activity.
+A lightweight monitor that lights up status LEDs when packets are received and parsed correctly. Useful for debugging and visual confirmation that packets are being received.
 
 ## Project Structure
 
