@@ -13,10 +13,59 @@ A high-frequency trading (HFT) system implemented on an FPGA (Basys 3), designed
 
 ## System Architecture
 
-
 <img src="./System_Architecture.png" alt="System Architecture" width="800"/>
 
 ## Project Overview
+
+## 🔧 Project Overview
+
+### `Wrapper.v`
+This is the top-level module. It connects all the other submodules and wires them to the FPGA I/O. It Provides system-wide control signals (e.g., `RESET`, `CLK`) and binds UART lines, debug LEDs, and flow control between logic blocks.
+
+---
+
+### `uart_receiver.v`
+This module receives serialised packet data over UART at a 9600 baud rate. It extracts TCP/IP-like fields including sequence numbers, flags, payload length, and order content. It also checks for a hardcoded destination IP to simulate a valid connection.
+
+---
+
+### `tcp_state_machine.v`
+Implements a basic TCP handshake/connection tracker. It monitors sequence/acknowledgement numbers and flags (SYN, ACK, etc.), simulating state transitions like `LISTEN → SYN_RCVD → ESTABLISHED`. Outputs a clean, parsed payload and ready signal.
+
+---
+
+### `packet_fifo.v`
+A buffer module that queues incoming payloads parsed by the TCP state machine. Decouples the receiver from the core trading logic to ensure flow control and prevent data loss under high load.
+
+---
+
+### `order_matching_engine.v`
+The heart of the system. Maintains a price-time priority order book using parallel arrays for bids and asks. On receiving a packet, it either:
+- Cancels an existing order
+- Scans for a matching order to trade against
+- Inserts a new order into the book
+
+Generates a `trade_valid` pulse with order details upon a successful match.
+
+---
+
+### `risk_management.v`
+Intercepts trades from the matching engine. Ensures no trade violates position or exposure limits using parameterized thresholds. Trades that pass are approved and passed forward for transmission.
+
+---
+
+### `uart_transmitter.v`
+Serializes and sends approved trades over UART. Sends back trade details like price, quantity, and participant IDs to an external system (e.g., computer or logger).
+
+---
+
+### `debouncer.v`
+Stabilizes button inputs (like BTNR) used to manually trigger trade transmission. Prevents multiple triggers from switch bouncing.
+
+---
+
+### `temp.v`
+A lightweight monitor that lights up status LEDs when packets are received and parsed correctly. Useful for debugging and visual confirmation of activity.
 
 ## Project Structure
 
