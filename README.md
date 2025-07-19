@@ -6,13 +6,9 @@ A high-frequency trading (HFT) system implemented on an FPGA (Basys 3), designed
 ## Key Features
 
 - TCP-like Packet Parsing
-
 - Price-Time Priority Matching Engine
-
 - Risk Management Controls
-
 - UART I/O for Trade Transmission
-
 - Modular & Testable Verilog Architecture
 
 ## Project Structure
