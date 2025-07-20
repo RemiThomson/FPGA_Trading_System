@@ -13,7 +13,9 @@ A high-frequency trading (HFT) system implemented on an FPGA (Basys 3), designed
 
 ## System Architecture
 
-<img src="./System_Architecture.png" alt="System Architecture" width="750"/>
+<p align="center">
+  <img src="System_Architecture.png" alt="System Architecture" width="500"/>
+</p>
 
 ## Project Structure
 
